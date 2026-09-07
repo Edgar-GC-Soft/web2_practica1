@@ -1,0 +1,32 @@
+<div class="topbar">
+  <div>
+    <div class="eyebrow">Gestión de inventario</div>
+    <h1>Inventario</h1>
+  </div>
+</div>
+
+<div class="card">
+  <div class="section-head">
+    <h3>Catálogo de productos</h3>
+    <button class="btn btn-primario btn-sm">+ Registrar producto</button>
+  </div>
+  <table>
+    <tr><th>Producto</th><th>Costo compra</th><th>Costo venta</th><th>Stock</th><th>Estado</th><th></th></tr>
+    @for (producto of productos; track producto.nombre) {
+      <tr>
+        <td>{{ producto.nombre }}</td>
+        <td>$ {{ producto.costoCompra }}</td>
+        <td>{{ producto.costoVenta ? '$ ' + producto.costoVenta : '-' }}</td>
+        <td>{{ producto.stock }}</td>
+        <td>
+          @if (producto.bajo) {
+            <span class="badge badge-low">Stock bajo</span>
+          } @else {
+            <span class="badge badge-ok">Disponible</span>
+          }
+        </td>
+        <td><a class="btn btn-outline btn-sm" href="#">Editar</a></td>
+      </tr>
+    }
+  </table>
+</div>

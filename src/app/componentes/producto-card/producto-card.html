@@ -1,0 +1,10 @@
+<article class="producto">
+  <div class="producto-imagen">
+    <img [src]="imagen()" [alt]="nombre()" onerror="this.style.display='none'; this.parentElement.classList.add('sin-imagen')">
+  </div>
+  <div class="producto-info">
+    <h3>{{ nombre() }}</h3>
+    <p class="producto-precio">$ {{ precio() }} MXN</p>
+    <button class="btn btn-primario">Agregar al carrito</button>
+  </div>
+</article>

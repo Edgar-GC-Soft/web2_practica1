@@ -1,0 +1,27 @@
+.login-contenedor {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+.login-marca {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.login-marca span {
+  color: var(--color-primario);
+}
+
+.login-boton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.4rem;
+}

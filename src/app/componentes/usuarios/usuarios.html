@@ -1,0 +1,48 @@
+<div class="topbar">
+  <div>
+    <div class="eyebrow">Usuarios y acceso</div>
+    <h1>Usuarios</h1>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom: 1.3rem;">
+  <div class="section-head">
+    <h3>Usuarios registrados</h3>
+    <button class="btn btn-primario btn-sm">+ Registrar usuario</button>
+  </div>
+  <table>
+    <tr><th>Nombre</th><th>Correo</th><th>Rol</th><th>Salario</th><th></th></tr>
+    @for (usuario of usuarios; track usuario.correo) {
+      <tr>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.correo }}</td>
+        <td>
+          <span class="badge" [class.badge-admin]="usuario.rol === 'Administrador'" [class.badge-cliente]="usuario.rol === 'Cliente'">
+            {{ usuario.rol }}
+          </span>
+        </td>
+        <td>{{ usuario.salario }}</td>
+        <td><a class="btn btn-outline btn-sm" href="#">Editar</a></td>
+      </tr>
+    }
+  </table>
+</div>
+
+<div class="card">
+  <h3 style="margin-bottom: 1rem;">Registrar nuevo usuario</h3>
+  <div class="row">
+    <div class="field"><label>Nombre</label><input placeholder="Nombre completo"></div>
+    <div class="field"><label>Correo</label><input placeholder="correo@cafeteria.com"></div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label>Rol</label>
+      <select>
+        <option>Administrador</option>
+        <option>Cliente</option>
+      </select>
+    </div>
+    <div class="field"><label>Salario (si aplica)</label><input placeholder="$0.00"></div>
+  </div>
+  <button class="btn btn-primario">Guardar usuario</button>
+</div>

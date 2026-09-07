@@ -1,0 +1,58 @@
+<div class="topbar">
+  <div>
+    <div class="eyebrow">Ventas y facturación</div>
+    <h1>Registrar venta</h1>
+  </div>
+</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3 style="margin-bottom: 1rem;">Catálogo de productos</h3>
+    <div class="grid grid-2">
+      @for (producto of productos; track producto.nombre) {
+        <app-producto-card
+          [nombre]="producto.nombre"
+          [precio]="producto.precio"
+          [imagen]="producto.imagen">
+        </app-producto-card>
+      }
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom: 1rem;">Detalle de la venta</h3>
+    <table>
+      <tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr>
+      @for (item of detalle; track item.producto) {
+        <tr>
+          <td>{{ item.producto }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>$ {{ item.subtotal }}</td>
+        </tr>
+      }
+    </table>
+    <div class="divider"></div>
+    <div class="field">
+      <label>Método de pago</label>
+      <select>
+        <option>Efectivo</option>
+        <option>Tarjeta</option>
+        <option>Transferencia</option>
+      </select>
+    </div>
+    <div class="section-head"><span class="muted">Total</span><h3>$128.00</h3></div>
+    <button class="btn btn-primario" style="width: 100%;">Generar factura</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="card" style="max-width: 480px;">
+  <div class="section-head">
+    <h3>Factura generada</h3>
+    <span class="badge badge-ok">Emitida</span>
+  </div>
+  <p class="muted">Folio: FAC-000482 · 03/09/2026</p>
+  <p class="muted" style="margin-bottom: 1rem;">Total: $128.00</p>
+  <button class="btn btn-primario">Descargar factura XML</button>
+</div>

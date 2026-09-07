@@ -1,0 +1,31 @@
+<div class="topbar">
+  <div>
+    <div class="eyebrow">Contabilidad y finanzas</div>
+    <h1>Transacciones</h1>
+  </div>
+</div>
+
+<div class="card">
+  <div class="section-head">
+    <h3>Historial de transacciones</h3>
+    <button class="btn btn-primario btn-sm">Exportar reporte</button>
+  </div>
+  <table>
+    <tr><th>Fecha</th><th>Tipo</th><th>Concepto</th><th>Origen</th><th>Monto</th></tr>
+    @for (t of transacciones; track t.concepto) {
+      <tr>
+        <td>{{ t.fecha }}</td>
+        <td>
+          @if (t.tipo === 'Ingreso') {
+            <span class="badge badge-ok">Ingreso</span>
+          } @else {
+            <span class="badge badge-low">Egreso</span>
+          }
+        </td>
+        <td>{{ t.concepto }}</td>
+        <td>{{ t.origen }}</td>
+        <td>$ {{ t.monto }}</td>
+      </tr>
+    }
+  </table>
+</div>

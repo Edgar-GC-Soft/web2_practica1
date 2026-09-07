@@ -1,1 +1,181 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primario: #A6672B;
+  --color-primario-oscuro: #8A5322;
+  --color-oscuro: #2E1F17;
+  --color-fondo: #FAF6F0;
+  --color-texto: #2B211B;
+  --color-texto-suave: #7A6C5D;
+  --color-borde: #E3D9CC;
+  --color-exito: #4F7942;
+  --color-peligro: #B23A2E;
+  --radio: 8px;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', 'Inter', sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radio);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: #fff;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-oscuro);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+.btn-sm {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 1.3rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th {
+  text-align: left;
+  padding: 0.6rem 0.7rem;
+  color: var(--color-texto-suave);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 0.78rem;
+}
+
+td {
+  padding: 0.65rem 0.7rem;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-ok { background: rgba(79, 121, 66, 0.12); color: var(--color-exito); }
+.badge-low { background: rgba(178, 58, 46, 0.12); color: var(--color-peligro); }
+.badge-admin { background: rgba(166, 103, 43, 0.14); color: var(--color-primario-oscuro); }
+.badge-cliente { background: rgba(43, 33, 27, 0.08); color: var(--color-texto-suave); }
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  background: #fff;
+  color: var(--color-texto);
+}
+
+label {
+  font-size: 0.78rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.field { margin-bottom: 0.9rem; }
+.row { display: flex; gap: 0.9rem; }
+.row .field { flex: 1; }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.7rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 0.25rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-borde);
+  margin: 1.3rem 0;
+}
+
+.muted { color: var(--color-texto-suave); font-size: 0.85rem; }
+
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  margin: 0.4rem 0 0.1rem;
+}
+
+.stat-label { font-size: 0.8rem; color: var(--color-texto-suave); }

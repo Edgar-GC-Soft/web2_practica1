@@ -1,0 +1,43 @@
+<div class="topbar">
+  <div>
+    <div class="eyebrow">Compras</div>
+    <h1>Registrar compra</h1>
+  </div>
+</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h3 style="margin-bottom: 1rem;">Nueva compra</h3>
+    <div class="field"><label>Fecha</label><input type="date"></div>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="field">
+        <label>Producto</label>
+        <select>
+          <option>Leche entera 1L</option>
+          <option>Jarabe de vainilla</option>
+        </select>
+      </div>
+      <div class="field" style="max-width: 100px;"><label>Cantidad</label><input placeholder="0"></div>
+      <div class="field" style="max-width: 120px;"><label>Costo unitario</label><input placeholder="$0.00"></div>
+    </div>
+    <button class="btn btn-outline btn-sm">+ Agregar a la compra</button>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom: 1rem;">Detalle de la compra</h3>
+    <table>
+      <tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr>
+      @for (item of detalle; track item.producto) {
+        <tr>
+          <td>{{ item.producto }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>$ {{ item.subtotal }}</td>
+        </tr>
+      }
+    </table>
+    <div class="divider"></div>
+    <div class="section-head"><span class="muted">Total</span><h3>$1,560.00</h3></div>
+    <button class="btn btn-primario" style="width: 100%;">Registrar compra</button>
+  </div>
+</div>

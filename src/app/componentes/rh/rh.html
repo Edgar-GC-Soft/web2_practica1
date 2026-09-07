@@ -1,0 +1,45 @@
+<div class="topbar">
+  <div>
+    <div class="eyebrow">Recursos humanos</div>
+    <h1>Asistencia y nómina</h1>
+  </div>
+</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <div class="section-head">
+      <h3>Asistencia de hoy</h3>
+    </div>
+    <table>
+      <tr><th>Administrador</th><th>Llegada</th><th>Salida</th></tr>
+      @for (a of asistencias; track a.nombre) {
+        <tr>
+          <td>{{ a.nombre }}</td>
+          <td>{{ a.llegada }}</td>
+          <td>{{ a.salida }}</td>
+        </tr>
+      }
+    </table>
+    <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+      <button class="btn btn-outline btn-sm">Registrar llegada</button>
+      <button class="btn btn-outline btn-sm">Registrar salida</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-head">
+      <h3>Nómina</h3>
+      <button class="btn btn-primario btn-sm">+ Registrar pago</button>
+    </div>
+    <table>
+      <tr><th>Administrador</th><th>Fecha de pago</th><th>Monto</th></tr>
+      @for (n of nominas; track n.nombre) {
+        <tr>
+          <td>{{ n.nombre }}</td>
+          <td>{{ n.fechaPago }}</td>
+          <td>$ {{ n.monto }}</td>
+        </tr>
+      }
+    </table>
+  </div>
+</div>
