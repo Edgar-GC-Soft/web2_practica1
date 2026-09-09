@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { ProductoCard } from '../producto-card/producto-card';
+import { ProductoCard } from '../producto-card/producto-card'; // aqui se importa el componente producto-card
 
 @Component({
   selector: 'app-ventas',
-  imports: [ProductoCard],
+  imports: [ProductoCard], // aqui se conecta con ventas.html
   templateUrl: './ventas.html',
   styleUrl: './ventas.css'
 })
 export class Ventas {
-  productos = [
-    { nombre: 'Café americano', precio: 45, imagen: 'assets/cafe-americano.jpg' },
-    { nombre: 'Cappuccino', precio: 55, imagen: 'assets/cappuccino.jpg' },
-    { nombre: 'Pan de elote', precio: 38, imagen: 'assets/pan-elote.jpg' },
+  productos = [ // aqui se guardan los datos que se mandan a producto-card
+    { nombre: 'Café americano', precio: 45, imagen: 'imagenes/cafe-americano.jpg' },
+    { nombre: 'Cappuccino', precio: 55, imagen: 'imagenes/cappuccino.jpg' },
+    { nombre: 'Pan de elote', precio: 38, imagen: 'imagenes/pan-elote.jpg' },
   ];
 
   detalle = [

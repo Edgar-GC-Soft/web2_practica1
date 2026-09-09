@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input } from '@angular/core'; // aqui se importa input
 
 @Component({
   selector: 'app-producto-card',
@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
   styleUrl: './producto-card.css'
 })
 export class ProductoCard {
-  nombre = input.required<string>();
-  precio = input.required<number>();
-  imagen = input.required<string>();
+  nombre = input.required<string>(); // aqui se recibe el nombre desde el componente padre
+  precio = input.required<number>(); // aqui se recibe el precio desde el componente padre
+  imagen = input.required<string>(); // aqui se recibe la imagen desde el componente padre
 }

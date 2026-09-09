@@ -1,10 +1,13 @@
 <article class="producto">
   <div class="producto-imagen">
     <img [src]="imagen()" [alt]="nombre()" onerror="this.style.display='none'; this.parentElement.classList.add('sin-imagen')">
+    <!-- aqui se muestra la imagen que llego por input -->
   </div>
   <div class="producto-info">
     <h3>{{ nombre() }}</h3>
+    <!-- aqui se muestra el nombre que llego por input -->
     <p class="producto-precio">$ {{ precio() }} MXN</p>
+    <!-- aqui se muestra el precio que llego por input -->
     <button class="btn btn-primario">Agregar al carrito</button>
   </div>
 </article>

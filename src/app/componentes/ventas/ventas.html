@@ -10,10 +10,12 @@
     <h3 style="margin-bottom: 1rem;">Catálogo de productos</h3>
     <div class="grid grid-2">
       @for (producto of productos; track producto.nombre) {
+        <!-- aqui se recorre el arreglo productos de ventas.ts -->
         <app-producto-card
           [nombre]="producto.nombre"
           [precio]="producto.precio"
           [imagen]="producto.imagen">
+          <!-- aqui se manda la informacion al componente producto-card -->
         </app-producto-card>
       }
     </div>
@@ -24,10 +26,14 @@
     <table>
       <tr><th>Producto</th><th>Cant.</th><th>Subtotal</th></tr>
       @for (item of detalle; track item.producto) {
+        <!-- aqui se recorre el arreglo detalle de ventas.ts -->
         <tr>
           <td>{{ item.producto }}</td>
+          <!-- aqui se muestra el producto del detalle -->
           <td>{{ item.cantidad }}</td>
+          <!-- aqui se muestra la cantidad del detalle -->
           <td>$ {{ item.subtotal }}</td>
+          <!-- aqui se muestra el subtotal del detalle -->
         </tr>
       }
     </table>
